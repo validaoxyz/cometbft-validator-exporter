@@ -1,0 +1,16 @@
+[Unit]
+Description=Collect Validator Stats
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+ExecStart=/usr/local/bin/validator_stats
+Environment="NETWORK_NAME="
+Environment="VALOPER="
+Environment="BINARY="
+Restart=always
+RestartSec=30s
+
+[Install]
+WantedBy=multi-user.target
